@@ -1,0 +1,6 @@
+- earth
+  earth-large: http://nasa.gov
+- mars
+  mars-large: http://wikimedia.org
+- moon
+  moon-large: http://lunar-captures.com

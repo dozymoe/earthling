@@ -1,0 +1,214 @@
+html,
+body,
+.page-wrap,
+.space-objects {
+  height: 100%;
+  width: 100%;
+}
+body {
+ 	background-color: #1a1a1a;
+ 	background-image: url(../img/background.jpg);
+  background-repeat: repeat;
+ 	color: #222;
+ 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+ 	font-size: 1em;
+  overflow: hidden;
+}
+nav ul {
+  margin: 0;
+}
+.page-navigation {
+  text-align: left;
+}	
+
+.page-navigation li{
+	 display: inline;
+}
+
+.page-navigation a:focus img,
+.page-navigation a:hover img {
+  -webkit-transform: scale(2) ;
+	 -moz-transform: scale(2) ;
+	 -o-transform: scale(2) ;
+	 transform: scale(2) ;
+
+ 	-webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+ 	-moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+ 	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+.space-object,
+.space-objects {
+  margin: 0;
+  padding: 0;
+}
+.space-object {
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -ms-animation-timing-function: linear;
+  animation-timing-function: linear;
+  display: inline-block;
+  -webkit-transition: all 2s;
+  -moz-transition: all 2s;
+  transition: all 2s;
+  text-align: center;
+  width: 50%;
+}
+body.rotate-left .space-object,
+body.rotate-right .space-object {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  transition: none;
+}
+body.selected .space-object,
+body.selected .space-object,
+body.selected .space-object {
+  left: 50%;
+  margin-left: -25%;
+  position: absolute;
+  top: 20em;
+}
+.space-objects {
+  list-style-type: none;
+  -webkit-perspective: 600px;
+  -moz-perspective: 600px;
+  -ms-perspective: 600px;
+  perspective: 600px;
+  position: relative;
+  overflow: auto;
+  white-space: nowrap;
+}
+body.selected .space-objects {
+  overflow: visible;
+}
+
+
+/* Planets */
+body.selected #earth img {
+  margin-top: -31.85%;
+}
+#earth img {
+  width: 63.71%;
+}
+body.selected #mars img {
+  margin-top: -16.98%;
+}
+#mars img {
+  width: 33.96%;
+}
+body.selected #moon img {
+  margin-top: -8.685%;
+}
+#moon img {
+  width: 17.371%;
+}
+body.selected.earth #earth,
+body.selected.mars  #mars,
+body.selected.moon  #moon {
+  transform: translateZ(100px) translateY(50%);
+  z-index: 2;
+}
+body.selected.earth #mars,
+body.selected.mars  #moon,
+body.selected.moon  #earth {
+  transform: translateZ(-130px) translateY(-3em) translateX(-90%);
+}
+body.selected.earth #moon,
+body.selected.mars  #earth,
+body.selected.moon  #mars {
+  transform: translateZ(-200px) translateY(-20em) translateX(100%);
+  z-index: 1;
+}
+body.rotate-left.earth #earth,
+body.rotate-left.mars #mars,
+body.rotate-left.moon #moon {
+  -webkit-animation-name: rotate_left_1;
+  -moz-animation-name: rotate_left_1;
+  animation-name: rotate_left_1;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  animation-play-state: running;
+}
+body.rotate-left.earth #mars,
+body.rotate-left.mars #moon,
+body.rotate-left.moon #earth {
+  -webkit-animation-name: rotate_left_2;
+  -moz-animation-name: rotate_left_2;
+  animation-name: rotate_left_2;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  animation-play-state: running;
+}
+body.rotate-left.earth #moon,
+body.rotate-left.mars #earth,
+body.rotate-left.moon #mars {
+  -webkit-animation-name: rotate_left_3;
+  -moz-animation-name: rotate_left_3;
+  animation-name: rotate_left_3;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  animation-play-state: running;
+}
+body.rotate-right .space-object {
+  -webkit-animation-name: rotate_right;
+  -moz-animation-name: rotate_right;
+  animation-name: rotate_right;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  animation-play-state: running;
+}
+
+@keyframes rotate_left_1 {
+  0% {
+    transform: translateZ(-130px) translateY(-3em) translateX(-90%);
+  }
+  25% {
+  }
+  50% {
+  }
+  75% {
+  }
+  100% {
+    transform: translateZ(100px) translateY(50%);
+  }
+}
+@keyframes rotate_left_2 {
+  0% {
+    transform: translateZ(-200px) translateY(-20em) translateX(100%);
+  }
+  25% {
+    transform: translateZ(-300px) translateY(-25em) translateX(10%);
+  }
+  50% {
+    transform: translateZ(-175px) translateY(-17em) translateX(-50%);
+  }
+  75% {
+    transform: translateZ(-150px) translateY(-10em) translateX(-70%);
+  }
+  100% {
+    transform: translateZ(-130px) translateY(-3em) translateX(-90%);
+  }
+}
+@keyframes rotate_left_3 {
+  0% {
+    transform: translateZ(100px) translateY(50%);
+  }
+  25% {
+    transform: translateZ(110px) translateY(55%) translateX(30%);
+  }
+  100% {
+    transform: translateZ(-200px) translateY(-20em) translateX(100%);
+  }
+}
