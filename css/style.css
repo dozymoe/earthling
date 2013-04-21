@@ -57,6 +57,11 @@ nav img {
   text-align: center;
   width: 50%;
 }
+.space-object img {
+  -webkit-border-radius: 20em;
+  -moz-border-radius: 20em;
+  border-radius: 20em;
+}
 body.rotate-left .space-object,
 body.rotate-right .space-object {
   -webkit-transition: none;
@@ -80,6 +85,9 @@ body.selected .space-object {
   perspective: 600px;
   position: relative;
   overflow: auto;
+  -webkit-transition: all 2s;
+  -moz-transition: all 2s;
+  transition: all 2s;
   white-space: nowrap;
 }
 body.selected .space-objects {
