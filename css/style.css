@@ -17,6 +17,10 @@ body {
 nav ul {
   margin: 0;
 }
+nav img {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
 .page-navigation {
   text-align: left;
 }	
@@ -102,6 +106,22 @@ body.selected #moon img {
 #moon img {
   width: 17.371%;
 }
+#menubumi,
+#menumars,
+#menumoon {
+  display: none;
+  z-index: 10;
+}
+body.selected.earth #menubumi {
+  display: block;
+}
+body.selected.mars #menumars {
+  display: block;
+}
+body.selected.moon #menumoon {
+  display: block;
+}
+
 body.selected.earth #earth,
 body.selected.mars  #mars,
 body.selected.moon  #moon {
